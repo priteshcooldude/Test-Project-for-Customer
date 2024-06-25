@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url 'https://plugins.gradle.org/m2/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'uk.co.deloitte.alpha.build:AlphaCommonPlugin:15.6.11'
+    }
+}
+
+apply plugin: 'AlphaCommonPlugin'
+group "alpha.notification.adapter"
+version gitVersion()
+
+dependencies {
+    annotationProcessor "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
+    annotationProcessor "io.micronaut.configuration:micronaut-openapi"
+
+    compile "uk.co.deloitte.alpha.error:alpha-error-handling-library:15.3.10"
+
+    implementation("com.twilio.sdk:twilio:9.2.1") {
+        exclude group: "io.jsonwebtoken", module: "jjwt"
+    }
+    implementation("com.infobip:infobip-api-java-client:4.0.0")
+
+    testImplementation 'org.testcontainers:testcontainers:1.17.6'
+    testImplementation 'org.testcontainers:junit-jupiter:1.17.6'
+    testImplementation 'org.testcontainers:kafka:1.17.6'
+    testImplementation 'net.java.dev.jna:jna-platform:5.8.0'
+    testImplementation 'net.java.dev.jna:jna:5.8.0'
+}
+
+mainClassName = "uk.co.deloitte.banking.alpha.notification.adapter.Application"
+
+test {
+    testLogging.showStandardStreams = true
+}
