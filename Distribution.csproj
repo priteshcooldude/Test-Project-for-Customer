@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <RootNamespace>JouleDirect.Execution.Distribution</RootNamespace>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+    <ContainerRepository>jdexecution/jouledirect.execution.distribution</ContainerRepository>
+    <ContainerBaseImage>trayportazdo.azurecr.io/dotnet-aspnet:8.0</ContainerBaseImage>
+    <IsPublishable>true</IsPublishable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" />
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="prometheus-net.AspNetCore" />
+    <PackageReference Include="prometheus-net.DotNetRuntime" />
+    <PackageReference Include="Serilog.AspNetCore" />
+    <PackageReference Include="Serilog.Enrichers.CorrelationId" />
+    <PackageReference Include="Serilog.Enrichers.Span" />
+    <PackageReference Include="Serilog.Enrichers.Thread" />
+    <PackageReference Include="Serilog.Exceptions" />
+    <PackageReference Include="Serilog.Expressions" />
+    <PackageReference Include="Serilog.Extensions.Hosting" />
+    <PackageReference Include="Serilog.Extensions.Logging" />
+    <PackageReference Include="Serilog.Settings.Configuration" />
+    <PackageReference Include="Serilog.Sinks.OpenTelemetry" />
+    <PackageReference Include="Trayport.Aggregation.Shared.Domain" />
+    <PackageReference Include="Trayport.Helios.Messaging" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Aspire\Distribution.ServiceDefaults\Distribution.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\..\Perspectives\Perspectives.csproj" />
+    <ProjectReference Include="..\..\Protocol\Distribution\Helios.Demux\Helios.Demux.csproj" />
+    <ProjectReference Include="..\..\Protocol\MultiBroker\Helios.OrdersDataSource\Helios.OrdersDataSource.csproj" />
+    <ProjectReference Include="..\..\Shared\HeliosShared\HeliosShared.csproj" />
+    <ProjectReference Include="..\..\Shared\Utilities\Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Distribution.IntegrationTests" />
+    <InternalsVisibleTo Include="Distribution.UnitTests" />
+    <InternalsVisibleTo Include="MuxOrdersProducer" />
+  </ItemGroup>
+
+</Project>
