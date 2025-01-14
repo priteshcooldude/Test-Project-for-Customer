@@ -1,0 +1,74 @@
+<!--
+    Central Package Management
+    See: https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management
+-->
+<Project>
+  <!--Import Project="..\..\Directory.Packages.props" /-->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <!--Work in progress, this is likely to move up a couple of directories-->
+  <ItemGroup>
+    <PackageVersion Include="Apache.Avro" Version="1.12.0" />
+    <PackageVersion Include="AutoFixture" Version="4.18.1" />
+    <PackageVersion Include="AutoFixture.AutoMoq" Version="4.18.1" />
+    <PackageVersion Include="AutoFixture.NUnit3" Version="4.18.1" />
+    <PackageVersion Include="AutoFixture.Xunit2" Version="4.18.0" />
+    <PackageVersion Include="Azure.Identity" Version="1.12.0" />
+    <PackageVersion Include="Azure.Storage.Blobs" Version="12.21.2" />
+    <PackageVersion Include="Confluent.Kafka" Version="2.5.2" />
+    <PackageVersion Include="Confluent.SchemaRegistry" Version="2.5.2" />
+    <PackageVersion Include="Confluent.SchemaRegistry.Serdes.Avro" Version="2.5.2" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.2" />
+    <PackageVersion Include="JetBrains.Annotations" Version="2024.2.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.0" />
+    <PackageVersion Include="Microsoft.CodeCoverage" Version="17.11.0" />
+    <PackageVersion Include="Moq" Version="4.20.70" />
+    <PackageVersion Include="NUnit" Version="3.14.0" />
+    <PackageVersion Include="NUnit.Analyzers" Version="4.3.0" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="4.6.0" />
+    <PackageVersion Include="PactNet" Version="4.5.0" />
+    <PackageVersion Include="PactNet.Linux.x64" Version="3.0.0" />
+    <PackageVersion Include="PactNet.Windows" Version="3.0.2" />
+    <PackageVersion Include="Trayport.DataAnalytics.Testing.KafkaProducer" Version="7.0.1.271" />
+    <PackageVersion Include="Trayport.DataAnalytics.Testing.Shared" Version="1.6.0.247" />
+    <PackageVersion Include="xunit" Version="2.5.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.0" />
+    <!-- Project specific packages below this line -->
+    <PackageVersion Update="Newtonsoft.Json" Version="12.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Options.DataAnnotations" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Polly" Version="8.0.7" />
+    <PackageVersion Include="Microsoft.Data.SqlClient" Version="5.2.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.3" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.3" />
+    <PackageVersion Include="Trayport.DataAnalytics.Shared" Version="5.0.0.204" />
+    <PackageVersion Include="Autofac" Version="8.0.0" />
+    <PackageVersion Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageVersion Include="Dapper" Version="2.1.37" />
+    <PackageVersion Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageVersion Include="OpenTelemetry" Version="1.7.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.7.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.7.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.7.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.7.1" />
+    <PackageVersion Include="Polly" Version="8.3.1" />
+    <PackageVersion Include="prometheus-net.AspNetCore" Version="8.2.1" />
+    <PackageVersion Include="Serilog" Version="3.1.1" />
+    <PackageVersion Include="Serilog.AspNetCore" Version="8.0.1" />
+    <PackageVersion Include="Serilog.Formatting.Compact" Version="2.0.0" />
+    <PackageVersion Include="Serilog.Sinks.Async" Version="1.5.0" />
+    <PackageVersion Include="Serilog.Sinks.Console" Version="5.0.1" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
+    <PackageVersion Include="Trayport.DataAnalytics.Metrics" Version="2.9.4.349" />
+  </ItemGroup>
+</Project>
